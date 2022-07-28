@@ -115,6 +115,9 @@ List of classes and small description of there use/utility :
 #### Bibliography & Other resources
 
 [Simulating Flying Insects](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0155698#sec025) main implementation idea
+
 [SDL](https://www.libsdl.org/) library
+
 ?[RVO2-3D](https://github.com/snape/RVO2-3D) 
+
 ?[Reciprocal Velocity Obstacles for Real-Time Multi-Agent Navigation](https://gamma.cs.unc.edu/RVO/icra2008.pdf)
