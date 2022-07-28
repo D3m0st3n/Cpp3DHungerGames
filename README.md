@@ -62,8 +62,11 @@ Be sure to run this following command line while being in the project directory.
 After downloading the project and installing all the requirements, run these commands in the terminal
 
 > $mkdir build
+> 
 > $cd build
+>
 > $cmake ..
+>
 > $cmake --build .
 
 The result should be two executable file ready to be launched in the terminal. 
