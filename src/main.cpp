@@ -25,6 +25,7 @@ int main (int argc, char** argv) {
     double maxtime = 1000.0;
     double dt = 0.1;
     double food_shift = 100.0;
+    double wall_width = 10.0;
     bool nfood = 0;
     bool dataR = 1;
 
@@ -129,7 +130,7 @@ int main (int argc, char** argv) {
         for(int i = 0; i < number_sim; i++){
 
             // Create arena
-            Arena3D arena(Vector3d<double>(500, 500, 250), 500, 500, nb_rooms, nb_ent, 10);
+            Arena3D arena(Vector3d<double>(500, 500, 250), 500, 500, nb_rooms, nb_ent, wall_width);
             if(f_room >= arena.GetNbWalls()){ f_room = 0;}
             // Set food object in arena
             if(!nfood){

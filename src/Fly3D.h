@@ -6,7 +6,6 @@
 #include "Vector3D.h"
 #include "Arena3D.h"
 
-class Simulation3D;
 
 class Fly3D {
 
