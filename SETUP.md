@@ -4,8 +4,6 @@
 
 Step-by-step set up for my project
 
-***
-
 ### Mac OS
 
 ***
