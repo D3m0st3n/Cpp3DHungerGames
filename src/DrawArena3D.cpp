@@ -53,17 +53,19 @@ int main(int argc, char* argv[]){
     int s_room = 0;
     int f_room = s_room + 1;
     double maxtime = 10000.0;
+    double food_shift = 100.0;
+    double wall_width = 20.0;
     bool no_food = 1;
     bool dataR = 0;
 
 
     // Arena initialization
-    Arena3D arena(Vector3d<double>(550, 550, 250), 500, 500, nb_rooms, nb_ent, 20);
+    Arena3D arena(Vector3d<double>(550, 550, 250), 500, 500, nb_rooms, nb_ent, wall_width);
     
     // Food initialization
     if(f_room >= arena.GetNbWalls() || f_room < 0){ f_room = 0;}
     if(!no_food){
-        Food food(&arena, f_room, 100.0);
+        Food food(&arena, f_room, food_shift);
         arena.SetFood(&food);
     }
     // Simulation initialization
@@ -153,12 +155,12 @@ int main(int argc, char* argv[]){
         SDL_RenderClear(renderer);
 
         // Wall points drawing
-        SDL_SetRenderDrawColor(renderer, 255, 125, 0, SDL_ALPHA_OPAQUE);
+        /* SDL_SetRenderDrawColor(renderer, 255, 125, 0, SDL_ALPHA_OPAQUE);
         for(int i = 0; i< arena.GetNbWalls(); i++){
             for(int j = 0; j<4; j++){
                 SDL_RenderDrawPointF(renderer, arena.GetWalls()[i].GetCoord()[j].x, arena.GetWalls()[i].GetCoord()[j].y);
             }
-        }
+        } */
         // Arena drawing
         SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
         SDL_Utility::DrawArena(renderer, &arena);

@@ -8,20 +8,20 @@
 #include <cmath>
 #include <string.h>
 
-Simulation3D::Simulation3D(const Vector3d<double>& c, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec) : maxtime(maxtime), time(0.0), dt(dt){
+Simulation3D::Simulation3D(const Vector3d<double>& c, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec) : 
+maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec){
 
     this->arena = new Arena3D(c, r, h, nb_walls, nb_ent);
-    this->dataRec = datarec;
     for(int i = 0; i<nb_flies; i++){
         this->flies.push_back(new Fly3D(starting_room, i, this->arena));
     }
     if(dataRec){ InitializeFile();}
 }
 
-Simulation3D::Simulation3D(const double& c1, const double& c2, const double& c3, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec) : maxtime(maxtime), time(0.0), dt(dt){
+Simulation3D::Simulation3D(const double& c1, const double& c2, const double& c3, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec) : 
+maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec){
 
     this->arena = new Arena3D(c1, c2, c3, r, h, nb_walls, nb_ent);
-    this->dataRec = datarec;
     for(int i = 0; i<nb_flies; i++){
         this->flies.push_back(new Fly3D(starting_room, i, this->arena));
     }

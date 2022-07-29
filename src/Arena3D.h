@@ -128,6 +128,12 @@ class Arena3D {
      */
     Food* GetFood();
 
+    /**
+     * @brief Get if arena has a food object associated with
+     * 
+     * @return true it has a food ptr
+     * @return false it has not
+     */
     bool GetFoodbool() const;
 
 

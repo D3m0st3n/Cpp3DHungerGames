@@ -25,6 +25,7 @@ class Simulation3D {
          * @param starting_room starting room of the flies
          * @param maxtime maximum running time
          * @param dt timestep
+         * @param datarec indicates if simulation records data
          */
         Simulation3D(const Vector3d<double>& c, const double& r, const double& h, int nb_walls = 0, const int& nb_ent = 2, const int& nb_flies = 0, const int& starting_room = 0, const double& maxtime = 1000.0, const double& dt = 0.1, const bool& datarec = 0);
 
@@ -41,6 +42,7 @@ class Simulation3D {
          * @param starting_room starting room of the flies
          * @param maxtime maximum running time
          * @param dt timestep
+         * @param datarec indicates if simulation records data
          */
         Simulation3D(const double& c1, const double& c2, const double& c3, const double& r, const double& h, int nb_walls = 0, const int& nb_ent = 2, const int& nb_flies = 0, const int& starting_room = 0, const double& maxtime = 1000.0, const double& dt = 0.1, const bool& datarec = 0);
 
@@ -52,6 +54,7 @@ class Simulation3D {
          * @param starting_room starting room of the flies
          * @param maxtime maximum running time
          * @param dt timestep
+         * @param datarec indicates if simulation records data
          */
         Simulation3D(Arena3D* arena, const int& nb_flies = 0, const int& starting_room = 0, const double& maxtime = 1000.0, const double& dt = 0.1, const bool& datarec = 0);
 
