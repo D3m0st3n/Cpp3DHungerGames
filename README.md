@@ -29,8 +29,7 @@ For graphics :
 
 ##### Mac OS
 
-I am using Visual Studio Code a scoding environment, so some steps and configurations might change. Install the package using *[Homebrew](https://brew.sh/)*.
-*CMakeLists.txt* shoulb be already configured and working for the porject.
+I am using Visual Studio Code a scoding environment, so some steps and configurations might change. Install the package using *[Homebrew](https://brew.sh/)*. *CMakeLists.txt* should be already configured and working for the porject.
 
 ##### Windows 
 
