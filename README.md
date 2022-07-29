@@ -87,24 +87,24 @@ The result should be two executable file ready to be launched in the terminal.
 
 List of classes and small description of there use/utility :
 
-- **Vector3D** Base utility class, defines 3D vectors and basic operations for the project.
-- **Cuboid** Defines a 3D cuboid shape built with 8 points. Base element to construct walls & entrances. Include many utility functions as well.
-- **Wall** Simulation object that divides the arena in multiple rooms.
-- **Entrance** Simulation object that is part of a wall and enables agents to cross walls.
-- **Arena3D**  Forms cylindrical arena built from walls, in which simulation takes place.
-- **Fly3D** Agent of the simulation, moves within the arena, going from room to room.
-- **Food** Attractor object for the agents, shift from room to room.
-- **Simulation3D** Regroup every element of the simulate and runs it.
+- **Vector3D** : Base utility class, defines 3D vectors and basic operations for the project.
+- **Cuboid** : Defines a 3D cuboid shape built with 8 points. Base element to construct walls & entrances. Include many utility functions as well.
+- **Wall** : Simulation object that divides the arena in multiple rooms.
+- **Entrance** : Simulation object that is part of a wall and enables agents to cross walls.
+- **Arena3D**  : Forms cylindrical arena built from walls, in which simulation takes place.
+- **Fly3D** : Agent of the simulation, moves within the arena, going from room to room.
+- **Food** : Attractor object for the agents, shift from room to room.
+- **Simulation3D** : Regroup every element of the simulate and runs it.
 
-- **Utility_SDL** Utility functions for graphic elements
+- **Utility_SDL** : Utility functions for graphic elements
 
 
 
 ##### Other
 
-- **main.cpp** Defines Sim3D executable
-- **DrawArena3D.cpp** Defines DrawArena3D executable
-- **Test.cpp** Defines executable that checks normal behaviour for Vector3D & Cuboid mainly
+- **main.cpp** : Defines Sim3D executable
+- **DrawArena3D.cpp** : Defines DrawArena3D executable
+- **Test.cpp** : Defines executable that checks normal behaviour for Vector3D & Cuboid mainly
 
 #### 4.2 Interactions
 
