@@ -1,6 +1,7 @@
 #ifndef CUBOID_H 
 #define CUBOID_H
 
+#include <vector>
 #include "Vector3D.h"
 
 class Cuboid{

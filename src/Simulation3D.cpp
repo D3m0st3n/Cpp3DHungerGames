@@ -8,8 +8,8 @@
 #include <cmath>
 #include <string.h>
 
-Simulation3D::Simulation3D(const Vector3d<double>& c, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec) : 
-maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec){
+Simulation3D::Simulation3D(const Vector3d<double>& c, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec, const bool& v) : 
+maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec), VERBOSE(v){
 
     this->arena = new Arena3D(c, r, h, nb_walls, nb_ent);
     for(int i = 0; i<nb_flies; i++){
@@ -18,8 +18,8 @@ maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec){
     if(dataRec){ InitializeFile();}
 }
 
-Simulation3D::Simulation3D(const double& c1, const double& c2, const double& c3, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec) : 
-maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec){
+Simulation3D::Simulation3D(const double& c1, const double& c2, const double& c3, const double& r, const double& h, int nb_walls, const int& nb_ent, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec, const bool& v) : 
+maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec), VERBOSE(v){
 
     this->arena = new Arena3D(c1, c2, c3, r, h, nb_walls, nb_ent);
     for(int i = 0; i<nb_flies; i++){
@@ -28,7 +28,7 @@ maxtime(maxtime), time(0.0), dt(dt), dataRec(datarec){
     if(dataRec){ InitializeFile();}
 }
 
-Simulation3D::Simulation3D(Arena3D* arena, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec) : maxtime(maxtime), time(0.0), dt(dt){
+Simulation3D::Simulation3D(Arena3D* arena, const int& nb_flies, const int& starting_room, const double& maxtime, const double& dt, const bool& datarec, const bool& v) : maxtime(maxtime), time(0.0), dt(dt), VERBOSE(v){
     this->arena = arena;
     this->dataRec = datarec;
     for(int i = 0; i<nb_flies; i++){
@@ -82,7 +82,8 @@ void Simulation3D::Update(const double& dt){
             Simfile<<"\n";
         }
 
-        Verbose();
+        if(VERBOSE) Verbose();
+
         
         time += dt;
     }
@@ -92,7 +93,7 @@ void Simulation3D::Update(const double& dt){
 }
 
 void Simulation3D::Verbose(){
-    system("clear");
+    /* system("clear");
 
     std::cout<<"%";
     for(int i = 0; i < 10; i++){
@@ -105,7 +106,7 @@ void Simulation3D::Verbose(){
     }
     std::cout<<"%   "<<ceil(time / maxtime * 100.0)<<" %";
 
-    std::cout<<"\n\n";
+    std::cout<<"\n\n"; */
 }
 
 Arena3D* Simulation3D::GetArena(){ return this->arena;}

@@ -1,5 +1,10 @@
+#Compiler command line
+# $ cmake -DCMAKE_C_COMPILER="C:/MinGW/bin/gcc.exe" -DCMAKE_CXX_COMPILER="C:/MinGW/bin/g++.exe" -G "MinGW Makefiles" ..
+
 cmake_minimum_required(VERSION 3.10)
 project(Sim3D)
+
+set(CMAKE_CXX_STANDARD 11)
 
 # SDL2 directories
 include_directories(${SDL2_INCLUDE_DIRS})

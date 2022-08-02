@@ -33,7 +33,17 @@ I am using Visual Studio Code a scoding environment, so some steps and configura
 
 ##### Windows 
 
-**TBD**
+##### *Note :* Simulation not on Windows OS, more work necessary
+
+Following commands only work if you have MinGW, CMake and external libraries set uo.
+
+In the project directory :
+
+> $ mkdir build && cd build 
+>
+> $ cmake -DCMAKE_C_COMPILER="/path/to/gcc.exe" -DCMAKE_CXX_COMPILER="/path/to/g++.exe" -G "MinGW Makefiles" ..
+>
+> $ cmake --build .
 
 ##### Linux?
 

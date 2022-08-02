@@ -2,7 +2,11 @@
 #define UTILITY_SDL_H
 
 // Third party
-#include <SDL.h>
+#if defined(WIN32) || defined(_WIN32)
+    #include <SDL2/SDL.h>
+#elif __APPLE__
+    #include <SDL.h>
+#endif
 // Project
 #include "Cuboid.h"
 #include "Arena3D.h"
@@ -31,7 +35,7 @@ namespace SDL_Utility {
      * @param centreY y coordinate of center
      * @param radius radius of circle
      */
-    void DrawCircleF(SDL_Renderer* renderer, const float32_t& centreX, const float32_t& centreY, const float32_t& radius);
+    void DrawCircleF(SDL_Renderer* renderer, const float& centreX, const float& centreY, const float& radius);
 
     /**
      * @brief Draw a ring on renderer
@@ -53,7 +57,7 @@ namespace SDL_Utility {
      * @param radius radius of circle
      * @param width width of ring
      */
-    void DrawRingF(SDL_Renderer* renderer, const float32_t& centreX, const float32_t& centreY, const float32_t& radius, const float32_t& width);
+    void DrawRingF(SDL_Renderer* renderer, const float& centreX, const float& centreY, const float& radius, const float& width);
 
     /**
      * @brief Draw Arena3D object on SDL renderer
